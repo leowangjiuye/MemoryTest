@@ -5,10 +5,12 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnSuccessListener{
     private List<Object> listLeak;
     private static InnerClass nonStaticInnerClassLeak;
     private Handler handlerLeak;
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 //        testNonStaticInnerClass();
 //        testStaticContext();
 //        testListLeak();
+        int i = OnResultListener.code;
     }
 
     private void testHandleLeak() {
@@ -63,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
         }
         //销毁activity,并gc后仍然存在引用。
     }
+
+    @Override
+    public void onSuccess() {
+
+    }
+
     private class InnerClass {
 
     }

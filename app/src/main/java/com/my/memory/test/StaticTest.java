@@ -8,5 +8,4 @@ import android.content.Context;
  */
 public class StaticTest {
     public  static Context context;
-
 }
